@@ -3,4 +3,10 @@ project(cpp_project_template)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(${PROJECT_NAME} main.cpp)
+include_directories(${CMAKE_SOURCE_DIR})
+
+file(GLOB SRC
+        "${CMAKE_SOURCE_DIR}/src/impls/*.cpp"
+        )
+
+add_executable(${PROJECT_NAME} ${SRC} main.cpp)
