@@ -1,0 +1,1 @@
+set(utils_DIR "C:/Users/User/Documents/Career/Dialtek/components/sources/utilsd/installed/lib/cmake/utils")

@@ -1,6 +1,10 @@
 #include <iostream>
 
+#include <utils/baseutils.h>
+
+
 int main() {
-  std::cout << "Hello, World!" << std::endl;
+  ErrorCode error_code = OPERATION_INTERRUPTED;
+  std::cout << error_code << std::endl;
   return 0;
 }

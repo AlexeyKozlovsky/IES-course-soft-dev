@@ -3,4 +3,14 @@ project(cpp_project_template)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(${PROJECT_NAME} main.cpp)
+include(env.cmake)
+include_directories(${CMAKE_SOURCE_DIR})
+
+find_package(utils REQUIRED)
+
+file(GLOB SRC
+
+        )
+
+add_executable(${PROJECT_NAME} ${SRC} main.cpp)
+target_link_libraries(${PROJECT_NAME} utils::utils)
