@@ -13,4 +13,4 @@ file(GLOB SRC
         )
 
 
-add_executable(${PROJECT_NAME} ${SRC} main.cpp)
+add_executable(${PROJECT_NAME} ${SRC} main.cpp services/dataproviders/dataproviderimpl2.cpp services/dataproviders/dataproviderimpl2.h services/test.cpp services/test.h services/dataproviderfactories/dataproviderfactoryimpl2.cpp services/dataproviderfactories/dataproviderfactoryimpl2.h)

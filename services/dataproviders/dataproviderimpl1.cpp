@@ -7,7 +7,7 @@ DataProviderImpl1::DataProviderImpl1(const std::string &url):
 }
 
 std::string DataProviderImpl1::getTitle() {
-  std::string result;
+  std::string result = "Impl1";
 
   // Тут должна быть прописана какая-то реальная логика ...
 
