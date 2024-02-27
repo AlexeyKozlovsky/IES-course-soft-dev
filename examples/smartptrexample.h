@@ -3,6 +3,9 @@
 
 #include <iostream>
 
+#include <memory>
+
+
 inline void memoryLeakExample() {
   {
     auto some_value = new int(2);
