@@ -8,6 +8,9 @@ include_directories(${CMAKE_SOURCE_DIR})
 
 find_package(Boost REQUIRED)
 find_package(utils REQUIRED)
+find_package(modbus REQUIRED)
+
+set(CMAKE_DEBUG_POSTFIX d CACHE INTERNAL "" FORCE)
 
 file(GLOB SRC
         "${CMAKE_SOURCE_DIR}/modbus/*.cpp"
@@ -20,4 +23,6 @@ if (Boost_FOUND)
     target_link_libraries (${PROJECT_NAME} ${Boost_LIBRARIES}) # подключаем библиотеку
 endif ()
 
-target_link_libraries(${PROJECT_NAME} utils::utils)
+target_link_libraries(${PROJECT_NAME}
+        utils::utils
+        modbus::modbus)

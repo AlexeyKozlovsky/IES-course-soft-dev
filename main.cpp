@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "modbus/modbus.h"
+#include <modbus/modbus.h>
 
 
 int main() {
-  std::string ip = "10.10.110.26";
+  std::string ip = "192.168.127.2";
   int port = 4001;
   int modbus_id = 1;
   modbus::ModbusClient modbus_client(ip, port);

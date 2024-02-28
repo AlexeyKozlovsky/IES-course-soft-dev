@@ -5,4 +5,7 @@ set (Boost_USE_STATIC_LIBS ON)
 set (Boost_USE_STATIC_RUNTIME OFF)
 set (BOOST_ALL_DYN_LINK OFF)
 
+set(CMAKE_DEBUG_POSTFIX d)
+
 set(utils_DIR "C:/Users/User/Documents/Career/Dialtek/IES/course1/lesson1/cpp-project-template/libs/utils/lib/cmake/utils")
+set(modbus_DIR "C:/Users/User/Documents/Career/Dialtek/IES/course1/lesson1/cpp-project-template/libs/modbus/lib/cmake/modbus")
