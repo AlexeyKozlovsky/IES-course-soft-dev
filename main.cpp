@@ -2,12 +2,17 @@
 
 #include <memory>
 
-#include "services/testclass.h"
+#include "services/testimpls/testimpl1.h"
 
 
 int main() {
-  double param = 1.;
-  auto test = std::make_shared<TestClass>(param);
-//  test->printSomething();
+  auto test_impl = std::make_shared<TestImpl1>();
+//  std::shared_ptr<Test> test_base = std::make_shared<Test>();
+
+  std::cout << "---------------------" << std::endl;
+  test_impl->someMethod();
+  std::cout << "---------------------" << std::endl;
+  test_impl->solve();
+//  test_base->someMethod();
   return 0;
 }
