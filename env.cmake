@@ -9,3 +9,4 @@ set(CMAKE_DEBUG_POSTFIX d)
 
 set(utils_DIR "C:/Users/User/Documents/Career/Dialtek/IES/course1/lesson1/cpp-project-template/libs/utils/lib/cmake/utils")
 set(modbus_DIR "C:/Users/User/Documents/Career/Dialtek/IES/course1/lesson1/cpp-project-template/libs/modbus/lib/cmake/modbus")
+set(threadpooling_DIR "C:/Users/User/Documents/Career/Dialtek/IES/course1/lesson1/cpp-project-template/libs/threadpooling/lib/cmake/threadpooling")

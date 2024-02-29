@@ -9,11 +9,14 @@ include_directories(${CMAKE_SOURCE_DIR})
 find_package(Boost REQUIRED)
 find_package(utils REQUIRED)
 find_package(modbus REQUIRED)
+find_package(threadpooling REQUIRED)
 
 set(CMAKE_DEBUG_POSTFIX d CACHE INTERNAL "" FORCE)
 
 file(GLOB SRC
-        "${CMAKE_SOURCE_DIR}/modbus/*.cpp"
+        "${CMAKE_SOURCE_DIR}/modbuswrappers/*.cpp"
+        "${CMAKE_SOURCE_DIR}/modbuswrappers/mocks/*.cpp"
+        "${CMAKE_SOURCE_DIR}/modbuswrappers/modbusclientwrapper/*.cpp"
         )
 
 add_executable(${PROJECT_NAME} ${SRC} main.cpp)
@@ -25,4 +28,5 @@ endif ()
 
 target_link_libraries(${PROJECT_NAME}
         utils::utils
-        modbus::modbus)
+        modbus::modbus
+        threadpooling::threadpooling)
