@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "modbuswrappers/modbusclientwrapper/modbusclientwrapperfactory.h"
+#include "modbuswrappers/mocks/modbuswrappermockfactory.h"
 
 
 int main() {
-  auto modbus_wrapper_factory = std::make_unique<ModbusClientWrapperFactory>();
+  auto modbus_wrapper_factory = std::make_unique<ModbusWrapperMockFactory>();
 
   std::string ip = "192.168.127.2";
   int port = 4001;
@@ -25,7 +25,9 @@ int main() {
       std::cerr << "Error while reading holding register:\t" << error_code << std::endl;
       modbus_wrapper->disconnect();
       return EXIT_FAILURE;
-    }
+    } else {
+      std::cout << "Successfully read holding register: " << reg_value << std::endl;
+    };
   }
 
   return EXIT_SUCCESS;
