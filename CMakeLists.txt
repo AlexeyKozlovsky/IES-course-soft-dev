@@ -26,6 +26,12 @@ if (Boost_FOUND)
     target_link_libraries (${PROJECT_NAME} ${Boost_LIBRARIES}) # подключаем библиотеку
 endif ()
 
+if(WIN32)
+    find_library(WSOCK32_LIBRARY wsock32)
+    find_library(WS2_32_LIBRARY ws2_32)
+    target_link_libraries(${PROJECT_NAME} wsock32 ws2_32)
+endif()
+
 target_link_libraries(${PROJECT_NAME}
         utils::utils
         modbus::modbus
