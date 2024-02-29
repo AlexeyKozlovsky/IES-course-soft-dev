@@ -32,41 +32,6 @@ class DeviceEntityImpl: public DeviceEntity {
 
   GetInnerStartPeriodResponse getInnerStartPeriod(GetInnerStartPeriodRequest request) override;
 
-  GetSyncModuleStatusesResponse getSyncModuleStatuses(GetSyncModuleStatusesRequest request) override;
-  GetSFPParametersResponse getSFPParameters(GetSFPParametersRequest request) override;
-  GetInnerStartWidthResponse getInnerStartWidth(GetInnerStartWidthRequest request) override;
-  GetInnerStartEnabledStatusResponse getInnerStartEnabledStatus(GetInnerStartEnabledStatusRequest request) override;
-  GetInnerStartInvertedStatusResponse getInnerStartInvertedStatus(GetInnerStartInvertedStatusRequest request) override;
-
-  GetChannelNameResponse getChannelName(GetChannelNameRequest request) override;
-  GetChannelDelayResponse getChannelsDelay(GetChannelDelayRequest request) override;
-  GetChannelWidthResponse getChannelsWidth(GetChannelWidthRequest request) override;
-  GetChannelEnabledStatusResponse getChannelsEnabledStatus(GetChannelEnabledStatusRequest request) override;
-  GetChannelInvertedStatusResponse getChannelsInvertedStatus(GetChannelInvertedStatusRequest request) override;
-  GetChannelStartModeResponse getChannelsStartMode(GetChannelStartModeRequest request) override;
-  GetChannelStartSourceResponse getChannelsStartSource(GetChannelStartSourceRequest request) override;
-
-  SetInnerStartPeriodResponse setInnerStartPeriod(SetInnerStartPeriodRequest request) override;
-  SetInnerStartWidthResponse setInnerStartWidth(SetInnerStartWidthRequest request) override;
-  SetInnerStartEnabledStatusResponse setInnerStartEnabledStatus(SetInnerStartEnabledStatusRequest request) override;
-  SetInnerStartInvertedStatusResponse setInnerStartInvertedStatus(SetInnerStartInvertedStatusRequest request) override;
-
-  SetChannelNameResponse setChannelName(SetChannelNameRequest request) override;
-
-  SetChannelDelayResponse setChannelDelay(SetChannelDelayRequest request) override;
-  SetChannelWidthResponse setChannelWidth(SetChannelWidthRequest request) override;
-  SetChannelEnabledStatusResponse setChannelEnabledStatus(SetChannelEnabledStatusRequest request) override;
-  SetChannelInvertedStatusResponse setChannelInvertedStatus(SetChannelInvertedStatusRequest request) override;
-  SetChannelStartSourceResponse setChannelStartSource(SetChannelStartSourceRequest request) override;
-  SetChannelStartModeResponse setChannelStartMode(SetChannelStartModeRequest request) override;
-
-  int getChannelCount() override;
-
-  ErrorCode loadDeviceDTO(const std::shared_ptr<DeviceEntityDTO> &dto) override;
-  std::shared_ptr<DeviceEntityDTO> updateDeviceDTO() override;
-
-  std::shared_ptr<DeviceEntityDTO> getDeviceDTO() override;
-
  private:
   std::shared_ptr<DeviceEntityDTO> _dto = nullptr;
 

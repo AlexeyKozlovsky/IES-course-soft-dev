@@ -55,7 +55,6 @@ std::shared_ptr<DeviceEntity> DeviceEntityFactoryStandaloneImpl1::createDeviceEn
 
     result->setConnectionStatus(is_connected);
 
-    result->loadDeviceDTO(dto);
   }
 
   return result;
