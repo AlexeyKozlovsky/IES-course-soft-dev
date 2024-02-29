@@ -7,6 +7,7 @@ set (BOOST_ALL_DYN_LINK OFF)
 
 set(CMAKE_DEBUG_POSTFIX d)
 
-set(utils_DIR "C:/Users/User/Documents/Career/Dialtek/IES/course1/lesson1/cpp-project-template/libs/utils/lib/cmake/utils")
-set(modbus_DIR "C:/Users/User/Documents/Career/Dialtek/IES/course1/lesson1/cpp-project-template/libs/modbus/lib/cmake/modbus")
-set(threadpooling_DIR "C:/Users/User/Documents/Career/Dialtek/IES/course1/lesson1/cpp-project-template/libs/threadpooling/lib/cmake/threadpooling")
+set(utils_DIR "${CMAKE_SOURCE_DIR}/libs/utils/lib/cmake/utils")
+set(modbus_DIR "${CMAKE_SOURCE_DIR}/libs/modbus/lib/cmake/modbus")
+set(threadpooling_DIR "${CMAKE_SOURCE_DIR}/libs/threadpooling/lib/cmake/threadpooling")
+set(modbuswrappers_DIR "${CMAKE_SOURCE_DIR}/libs/modbuswrappers/lib/cmake/modbuswrappers")
