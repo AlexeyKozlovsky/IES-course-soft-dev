@@ -17,6 +17,10 @@ file(GLOB SRC
         "${CMAKE_SOURCE_DIR}/modbuswrappers/*.cpp"
         "${CMAKE_SOURCE_DIR}/modbuswrappers/mocks/*.cpp"
         "${CMAKE_SOURCE_DIR}/modbuswrappers/modbusclientwrapper/*.cpp"
+        "${CMAKE_SOURCE_DIR}/modbuswrappers/modbusclientidwrapper/*.cpp"
+        "${CMAKE_SOURCE_DIR}/modbuswrappers/modbusasyncclientwrapper/*.cpp"
+        "${CMAKE_SOURCE_DIR}/modbuswrappers/modbusdividableclientwrapper/*.cpp"
+        "${CMAKE_SOURCE_DIR}/modbuswrappers/factories/*.cpp"
         )
 
 add_executable(${PROJECT_NAME} ${SRC} main.cpp)
