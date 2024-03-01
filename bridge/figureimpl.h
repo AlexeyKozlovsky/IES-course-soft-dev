@@ -1,0 +1,9 @@
+#ifndef CPP_PROJECT_TEMPLATE_BRIDGE_FIGUREIMPL_H_
+#define CPP_PROJECT_TEMPLATE_BRIDGE_FIGUREIMPL_H_
+
+class FigureImpl {
+ public:
+  virtual void draw() = 0;
+};
+
+#endif //CPP_PROJECT_TEMPLATE_BRIDGE_FIGUREIMPL_H_
