@@ -9,3 +9,5 @@ set(CMAKE_DEBUG_POSTFIX d)
 
 set(utils_DIR "${CMAKE_SOURCE_DIR}/libs/utils/lib/cmake/utils")
 set(modbus_DIR "${CMAKE_SOURCE_DIR}/libs/modbus/lib/cmake/modbus")
+set(modbuswrappers_DIR "${CMAKE_SOURCE_DIR}/libs/modbuswrappers/lib/cmake/modbuswrappers")
+set(threadpooling_DIR "${CMAKE_SOURCE_DIR}/libs/threadpooling/lib/cmake/threadpooling")

@@ -1,34 +1,32 @@
 #include "device.h"
 
-Device::Device(const std::shared_ptr<ModbusClient> &modbus_client,
-               int modbus_id):
-               _modbus_client(modbus_client),
-               _modbus_id(modbus_id) {
+Device::Device(const std::shared_ptr<ModbusWrapper> &modbus_wrapper):
+  _modbus_wrapper(modbus_wrapper) {
 
 }
 
 bool Device::connect() {
   bool result = false;
-  if (_modbus_client != nullptr) {
-    result = _modbus_client->connect();
+  if (_modbus_wrapper != nullptr) {
+    result = _modbus_wrapper->connect();
   }
 
   return result;
 }
 
 void Device::disconnect() {
-  if (_modbus_client != nullptr) {
-    _modbus_client->disconnect();
+  if (_modbus_wrapper != nullptr) {
+    _modbus_wrapper->disconnect();
   }
 }
 
 uint64_t Device::getInnerStartPeriod() {
   uint64_t result = 0;
 
-  if (_modbus_client != nullptr) {
+  if (_modbus_wrapper != nullptr) {
     std::vector<uint16_t> reg_values(2);
-    auto error_code = _modbus_client->readHoldingRegisters(2, 2, reg_values, _modbus_id);
-    if (error_code != modbus::NO_MODBUS_ERROR) {
+    auto error_code = _modbus_wrapper->readHoldingRegisters(2, 2, reg_values);
+    if (error_code != SUCCESS) {
       std::cerr << "Error while reading holding registers " << __func__ << std::endl;
       return result;
     }

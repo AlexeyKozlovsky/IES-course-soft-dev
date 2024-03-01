@@ -3,15 +3,11 @@
 
 #include <cstdint>
 
-#include <modbus/modbus.h>
-
-using modbus::ModbusClient;
-
+#include <modbuswrappers/modbuswrapper.h>
 
 class Device {
  public:
-  explicit Device(const std::shared_ptr<ModbusClient> &modbus_client,
-                  int modbus_id);
+  explicit Device(const std::shared_ptr<ModbusWrapper> &modbus_wrapper);
 
   bool connect();
   void disconnect();
@@ -21,8 +17,7 @@ class Device {
  private:
   uint64_t _inner_start_period = 0;
 
-  int _modbus_id;
-  std::shared_ptr<ModbusClient> _modbus_client;
+  std::shared_ptr<ModbusWrapper> _modbus_wrapper = nullptr;
 };
 
 #endif //CPP_PROJECT_TEMPLATE_DEVICE_DEVICE_H_
