@@ -1,32 +1,21 @@
 #include <iostream>
 
-#include "modbuswrappers/modbusclientwrapper/modbusclientwrapperfactory.h"
+#include "state/states/brokenremote.h"
+#include "state/states/workingremote.h"
+#include "state/remotestatemachine.h"
 
 
 int main() {
-  auto modbus_wrapper_factory = std::make_unique<ModbusClientWrapperFactory>();
 
-  std::string ip = "192.168.127.2";
-  int port = 4001;
-  int modbus_id = 1;
+  auto broken_state = std::make_shared<BrokenRemote>();
+  auto working_state = std::make_shared<WorkingRemote>();
+  auto remote_state_machine = std::make_shared<RemoteStateMachine>(broken_state, working_state);
 
-  auto modbus_wrapper = modbus_wrapper_factory->createBaseModbusWrapper(ip, port);
-  if (modbus_wrapper != nullptr) {
-    auto error_code = modbus_wrapper->connect();
-    if (error_code != SUCCESS) {
-      std::cerr << "Error while connection attempt:\t" << error_code << std::endl;
-      return EXIT_FAILURE;
-    }
+  remote_state_machine->changeState("working");
+  remote_state_machine->onClick();
 
-    uint16_t reg_num = 0;
-    uint16_t reg_value;
-    error_code = modbus_wrapper->readHoldingRegister(reg_num, reg_value, modbus_id);
-    if (error_code != SUCCESS) {
-      std::cerr << "Error while reading holding register:\t" << error_code << std::endl;
-      modbus_wrapper->disconnect();
-      return EXIT_FAILURE;
-    }
-  }
+  remote_state_machine->changeState("broken");
+  remote_state_machine->onClick();
 
   return EXIT_SUCCESS;
 }
