@@ -12,7 +12,7 @@ class DeviceModel: public QObject {
   virtual uint64_t getPeriod() = 0;
 
  signals:
-  void periodChanged(uint64_t period);
+  void periodChangedSignal(uint64_t period);
 };
 
 #endif //CPP_PROJECT_TEMPLATE_MVC_DEVICE_MODELS_DEVICEMODEL_H_
