@@ -1,0 +1,10 @@
+#ifndef CPP_PROJECT_TEMPLATE_OBSERVERS_OBSERVER_H_
+#define CPP_PROJECT_TEMPLATE_OBSERVERS_OBSERVER_H_
+
+class Observer {
+ public:
+  virtual void update() = 0;
+};
+
+
+#endif //CPP_PROJECT_TEMPLATE_OBSERVERS_OBSERVER_H_

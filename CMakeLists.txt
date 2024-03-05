@@ -9,7 +9,7 @@ set(CMAKE_AUTOMOC ON)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 file(GLOB SRC
-        "${CMAKE_SOURCE_DIR}/widgets/*.cpp")
+        "${CMAKE_SOURCE_DIR}/observers/*.cpp")
 
 add_executable(${PROJECT_NAME} ${SRC} main.cpp)
 target_link_libraries(${PROJECT_NAME}
