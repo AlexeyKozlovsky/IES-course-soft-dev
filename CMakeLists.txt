@@ -15,6 +15,7 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 file(GLOB SRC
         "${CMAKE_SOURCE_DIR}/command/*.cpp"
+        "${CMAKE_SOURCE_DIR}/threadpool/*.cpp"
         )
 
 add_executable(${PROJECT_NAME} ${SRC} main.cpp)
