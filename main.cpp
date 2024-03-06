@@ -1,22 +1,14 @@
 #include <iostream>
 
-#include <QApplication>
+#include "command/helloworldcommand.h"
+#include "command/someclass.h"
 
-#include "observers/testwidget.h"
-#include "observers/button.h"
-#include "observers/logger.h"
 
 int main(int argc, char *argv[]) {
-  QApplication app(argc, argv);
+  auto hello_world_command = std::make_shared<HelloWorldCommand>();
 
-  auto logger = std::make_shared<Logger>();
+  auto some_class = std::make_shared<SomeClass>(hello_world_command);
+  some_class->print();
 
-  auto test_widget = std::make_shared<TestWidget>();
-  test_widget->show();
-
-  auto button = std::make_shared<Button>(logger);
-  button->show();
-
-
-  return app.exec();
+  return 0;
 }
